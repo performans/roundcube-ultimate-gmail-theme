@@ -115,7 +115,11 @@
         'sidebar list';
     }
 
-    body.layout-list #layout-content {
+    html.nav-collapsed body.layout-list #layout {
+      grid-template-columns: var(--spacing-nav-rail) minmax(0, 1fr);
+    }
+
+    body.layout-list:not(.action-show):not(.action-compose) #layout-content {
       grid-area: list;
     }
   }
@@ -249,6 +253,11 @@
   .button.icon.task-menu-button,
   .button.icon.toolbar-menu-button {
     display: none;
+  }
+
+  /* full-page message view (action=show): show back-to-list arrow in content toolbar like Gmail */
+  body.task-mail.action-show #layout-content > .header > .button.icon.back-list-button {
+    display: inline-flex;
   }
 
   /* ---------- tablet / phone: one panel at a time ---------- */
