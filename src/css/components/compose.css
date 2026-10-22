@@ -28,7 +28,9 @@
     white-space: nowrap;
   }
 
+  #layout-content > .gm-compose-head .toolbar,
   .gm-compose-head .toolbar {
+    flex: 0 0 auto;
     margin-left: auto;
   }
 

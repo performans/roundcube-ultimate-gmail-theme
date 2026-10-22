@@ -53,8 +53,8 @@ export const compose = {
 
   toggle_toolbar() {
     html.classList.toggle('gm-editor-toolbar-hidden');
-    const ed = window.rcmail?.editor?.editor;
-    if (ed && !window.rcmail.editor.is_html()) {
+    const ed = window.rcmail?.editor;
+    if (ed && !ed.is_html()) {
       // plain text → switch to HTML (Gmail has formatting on by default)
       window.rcmail.command('toggle-editor', { id: 'composebody', html: true });
       html.classList.remove('gm-editor-toolbar-hidden');
